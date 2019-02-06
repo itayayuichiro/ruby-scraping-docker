@@ -1,6 +1,10 @@
 # 概要
 rubyでスクレイピングをする人用のスターターキットDocker
 
+## 構築環境
+* ruby
+* MySQL
+
 ## 実行手順
 1. このリポジトリをclone
 1. `docker-compose build`
