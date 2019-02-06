@@ -22,7 +22,18 @@ rubyのhttp通信を行う上で一番初歩の初歩であるnet/http通信とH
 
 rubyで取った値をmysqlのDBに格納する方法を記述(qiitaの記事タイトルとURLを格納する)
 
+テーブル
+```
+CREATE TABLE `articles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `url` varchar(255) NOT NULL DEFAULT '',
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
 ホスト側からSequel Proなどで確認する場合の設定
+
 ```
 ホスト：127.0.0.1
 ユーザー名：root
