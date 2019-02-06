@@ -11,6 +11,5 @@ rubyでスクレイピングをする人用のスターターキットDocker
 
 ## 初期セットしてあるコード
 * crawler.rb
+
 rubyのhttp通信を行う上で一番初歩の初歩であるnet/http通信とHTMLのパーサーであるNokogiriを用いたスクレイピング(開発者であるitayaのqiitaマイページのスクレイピング)
-* crawler_open_url.rb
-net/httpより
