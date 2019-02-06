@@ -31,3 +31,5 @@ rubyで取った値をmysqlのDBに格納する方法を記述(qiitaの記事タ
 ```
 
 * crawler_selenium.rb
+
+上記の手順をHeadless Chromeを使って実装してたもの。
