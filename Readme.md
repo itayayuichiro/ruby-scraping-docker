@@ -13,3 +13,15 @@ rubyでスクレイピングをする人用のスターターキットDocker
 * crawler.rb
 
 rubyのhttp通信を行う上で一番初歩の初歩であるnet/http通信とHTMLのパーサーであるNokogiriを用いたスクレイピング(開発者であるitayaのqiitaマイページのスクレイピング)
+
+* crawler_mysql.rb
+
+rubyで取った値をmysqlのDBに格納する方法を記述(qiitaの記事タイトルとURLを格納する)
+
+ホスト側からSequel Proなどで確認する場合の設定
+```
+ホスト：127.0.0.1
+ユーザー名：root
+パスワード：password
+ポート：3307
+```

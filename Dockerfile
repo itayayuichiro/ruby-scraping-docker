@@ -12,7 +12,8 @@ RUN apk update && \
     ruby-irb \
     ruby-io-console \
     ruby-rdoc \
-    ruby-bundler
+    ruby-bundler \
+    mariadb-dev
 WORKDIR /root/src
 
 CMD ["top"]

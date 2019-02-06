@@ -16,3 +16,18 @@ services:
 
         volumes:
           - ./src:/root/src
+
+    # MySQLのコンテナ
+    mysql:
+        image: mysql:5.6
+        ports:
+          - 3307:3306
+        restart: on-failure
+        environment:
+          - MYSQL_ROOT_PASSWORD=password
+          - MYSQL_DATABASE=scraping
+          - MYSQL_USER=root
+          - MYSQL_PASSWORD=password
+        volumes:
+          - ./mysql:/var/lib/mysql
+        container_name: mysql_db
