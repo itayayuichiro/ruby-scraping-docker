@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.7
 
 RUN apk update && \
     apk upgrade && \
@@ -14,6 +14,17 @@ RUN apk update && \
     ruby-rdoc \
     ruby-bundler \
     mariadb-dev
+
+RUN apk add --update \
+            udev \
+            ttf-freefont \
+            chromium \
+            openssl \
+            chromium-chromedriver \
+            gfortran \
+            gcc \
+            g++
+
 WORKDIR /root/src
 
 CMD ["top"]

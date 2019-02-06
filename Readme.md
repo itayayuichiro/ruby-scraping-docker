@@ -29,3 +29,5 @@ rubyで取った値をmysqlのDBに格納する方法を記述(qiitaの記事タ
 パスワード：password
 ポート：3307
 ```
+
+* crawler_selenium.rb

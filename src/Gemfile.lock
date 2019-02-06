@@ -14,7 +14,10 @@ GEM
       tzinfo (~> 1.1)
     arel (9.0.0)
     bigdecimal (1.4.3)
+    childprocess (0.9.0)
+      ffi (~> 1.0, >= 1.0.11)
     concurrent-ruby (1.1.4)
+    ffi (1.10.0)
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     mini_portile2 (2.4.0)
@@ -22,6 +25,10 @@ GEM
     mysql2 (0.5.2)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
+    rubyzip (1.2.2)
+    selenium-webdriver (3.141.0)
+      childprocess (~> 0.5)
+      rubyzip (~> 1.2, >= 1.2.2)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -34,6 +41,7 @@ DEPENDENCIES
   bigdecimal
   mysql2 (= 0.5.2)
   nokogiri
+  selenium-webdriver
 
 BUNDLED WITH
    1.13.4
