@@ -1,0 +1,18 @@
+# バージョン2記法で記述する
+version: '2'
+
+# 起動するコンテナを定義する
+services:
+
+    # Play Frameworkコンテナ
+    play:
+        # DockerfileによってPlay Frameworkイメージの自作を目指す
+        # このファイルと同じフォルダーのDockerfileを使う
+        build: ./
+
+        # コンテナ名を指定する
+        # Docker Composeが自動生成するコンテナ名は長く、タイピングが面倒なため
+        container_name: play
+
+        volumes:
+          - ./src:/root/src
