@@ -1,28 +1,28 @@
-# 概要
-rubyでスクレイピングをする人用のスターターキットDocker
+# Overview
+Starter kit for people who scraping with ruby ​​Docker
 
-## 構築環境
+## Construction environment
 * ruby
 * MySQL
 
-## 実行手順
-1. このリポジトリをclone
+## Execution procedure
+1. Copy this repository to clone
 1. `docker-compose build`
 1. `docker-compose up -d`
 1. `docker-compose exec play bash`
 1. `bundle install --path .bundle`
-1. `bundle exec ruby ソース名.rb`
+1. `bundle exec ruby **.rb`
 
-## 初期セットしてあるコード
+## Initial set code
 * crawler.rb
 
-rubyのhttp通信を行う上で一番初歩の初歩であるnet/http通信とHTMLのパーサーであるNokogiriを用いたスクレイピング(開発者であるitayaのqiitaマイページのスクレイピング)
+Scraping using net / http communication and HTML parser Nokogiri which is the first step in ruby's http communication (scraping of qiita my page of developer itaya)
 
 * crawler_mysql.rb
 
-rubyで取った値をmysqlのDBに格納する方法を記述(qiitaの記事タイトルとURLを格納する)
+Describe a method to store the value taken by ruby ​​in DB of mysql (store qiita's article title and URL)
 
-テーブル
+table
 ```
 CREATE TABLE `articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -32,15 +32,15 @@ CREATE TABLE `articles` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
-ホスト側からSequel Proなどで確認する場合の設定
+Setting when checking with Sequel Pro etc. from the host side
 
 ```
-ホスト：127.0.0.1
-ユーザー名：root
-パスワード：password
-ポート：3307
+Host: 127.0.0.1
+User name: root
+Password: password
+Port: 3307
 ```
 
 * crawler_selenium.rb
 
-上記の手順をHeadless Chromeを使って実装してたもの。
+The above procedure was implemented using Headless Chrome.
