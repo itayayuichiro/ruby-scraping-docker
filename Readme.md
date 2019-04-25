@@ -14,33 +14,10 @@ rubyでスクレイピングをする人用のスターターキットDocker
 1. `bundle exec ruby ソース名.rb`
 
 ## 初期セットしてあるコード
-* crawler.rb
+* qiita.rb
 
-rubyのhttp通信を行う上で一番初歩の初歩であるnet/http通信とHTMLのパーサーであるNokogiriを用いたスクレイピング(開発者であるitayaのqiitaマイページのスクレイピング)
+qiitaのトレンドの
+* タイトル
+* いいね数
 
-* crawler_mysql.rb
-
-rubyで取った値をmysqlのDBに格納する方法を記述(qiitaの記事タイトルとURLを格納する)
-
-テーブル
-```
-CREATE TABLE `articles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) NOT NULL DEFAULT '',
-  `url` varchar(255) NOT NULL DEFAULT '',
-  `created_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-```
-ホスト側からSequel Proなどで確認する場合の設定
-
-```
-ホスト：127.0.0.1
-ユーザー名：root
-パスワード：password
-ポート：3307
-```
-
-* crawler_selenium.rb
-
-上記の手順をHeadless Chromeを使って実装してたもの。
+を取得するスクリプト
