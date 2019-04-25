@@ -18,6 +18,11 @@ end
 
 doc = Nokogiri::HTML.parse(response.body.toutf8, nil, 'utf-8')
 json_data = JSON.parse(doc.css('.p-home_main div')[0].attribute("data-hyperapp-props").value)
+result = []
 json_data['trend']['edges'].each do |record|
-  p record['node']['title']
+  result.push({
+    :title => record['node']['title'],
+    :likesCount => record['node']['likesCount'],
+  })
 end
+pp result
