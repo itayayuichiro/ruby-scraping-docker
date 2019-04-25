@@ -2,8 +2,10 @@ require 'net/http'
 require 'uri'
 require 'nokogiri'
 require 'kconv'
+require 'json'
+require 'pp'
 
-uri = URI.parse("https://qiita.com/itaya")
+uri = URI.parse("https://qiita.com/")
 request = Net::HTTP::Get.new(uri)
 
 req_options = {
@@ -15,9 +17,7 @@ response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
 end
 
 doc = Nokogiri::HTML.parse(response.body.toutf8, nil, 'utf-8')
-p '###HTMLタイトル取得###'
-p doc.title
-p '###記事タイトル取得###'
-doc.css('article.ItemLink').each do |div|
-	p div.css('.u-link-no-underline')[0].text
+json_data = JSON.parse(doc.css('.p-home_main div')[0].attribute("data-hyperapp-props").value)
+json_data['trend']['edges'].each do |record|
+  p record['node']['title']
 end
